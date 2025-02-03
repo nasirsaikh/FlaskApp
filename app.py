@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+import plotly
 
 app = Flask(__name__)
 
@@ -39,3 +40,5 @@ def dashboard():
                          profit_chart=profit_chart,
                          kpis=kpis,
                          data=df.to_dict('records'))
+
+app.run(host='127.0.0.1',port=8000,debug=True)
